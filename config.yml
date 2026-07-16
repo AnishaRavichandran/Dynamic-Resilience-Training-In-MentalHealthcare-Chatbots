@@ -1,0 +1,43 @@
+# config.yml
+
+# ... (language and recipe settings are above)
+language: en
+pipeline:
+  # --- 1. Converts text into tokens ---
+- name: WhitespaceTokenizer
+
+  # --- 2. Featurizers (The "Senses") ---
+  # These create features that DIETClassifier will use.
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+
+  # --- 3. The "Brain" ---
+  # DIETClassifier uses the features from above to predict intents and entities.
+- name: DIETClassifier
+  epochs: 100
+  constrain_similarities: true
+
+  # --- 4. The Fallback Mechanism ---
+- name: FallbackClassifier
+  threshold: 0.5
+  ambiguity_threshold: 0.1
+assistant_id: 20250719-220801-late-time
+policies:
+
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+#   - name: MemoizationPolicy
+#   - name: RulePolicy
+#   - name: UnexpecTEDIntentPolicy
+#     max_history: 5
+#     epochs: 100
+#   - name: TEDPolicy
+#     max_history: 5
+#     epochs: 100
+#     constrain_similarities: true
