@@ -26,8 +26,8 @@ learn from feedback?
 `MHResilience.json` — 120 intents, ~6,400 user input patterns, ~6,000 curated
 resilience-focused responses, covering everything from neutral small talk
 (greetings, time of day) to emotionally sensitive topics (stress, anxiety,
-worthlessness, suicidal ideation). Same dataset used across all four models
-(converted to RASA's `yml` format for the fourth model ).
+worthlessness, suicidal ideation). Same dataset used across all four models.
+
 
  
 
