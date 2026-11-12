@@ -6,6 +6,8 @@ mental health support: **Rule-Based**, **LSTM**, **fine-tuned GPT-2**, and
 get more capable and adaptive, they tend to get harder to explain — and in a
 sensitive domain like mental health, that tradeoff actually matters.
 
+Link for Resilibot(LSTM): https://vdqramvsxo2mutjaq4rpnw.streamlit.app/
+
 ## Research Question
 
 How can we design mental health chatbots that (1) build user resilience while
